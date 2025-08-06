@@ -1,8 +1,5 @@
 # Streamlit for creating web apps
 import streamlit as st
-
-# Web scraping
-import requests
 from bs4 import BeautifulSoup
 import re
 
@@ -24,6 +21,7 @@ import time
 import datetime
 from tqdm import tqdm
 import matplotlib.pyplot as plt
+from security import safe_requests
 
 
 # Check if GPU is available
@@ -351,7 +349,7 @@ def get_location_details(summary):
         'key': API_KEY,
         'components': 'country:IN'
     }
-    response = requests.get(GEOCODE_URL, params=params)
+    response = safe_requests.get(GEOCODE_URL, params=params)
     if response.status_code != 200:
         print(f"Error in API call: {response.status_code}")
         return None

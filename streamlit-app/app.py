@@ -1,10 +1,10 @@
 import streamlit as st
-import requests
 from bs4 import BeautifulSoup
 import re
 import pandas as pd
 import gspread
 from google.oauth2.service_account import Credentials
+from security import safe_requests
 
 # Initialize session state for storing scraped data and save state
 if "scraped_data" not in st.session_state:
@@ -27,7 +27,7 @@ def scrape_satp_data(base_url, years, months):
         for month in months:
             url = f"{base_url}-{month}-{year}"
             with st.spinner(f"Scraping: {url}"):
-                response = requests.get(url)
+                response = safe_requests.get(url)
                 if response.status_code != 200:
                     st.warning(f"Failed to fetch data for {month} {year}: {response.status_code}")
                     continue
