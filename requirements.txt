@@ -46,7 +46,7 @@ numpy==1.26.4
 onnxruntime==1.19.0
 packaging==24.1
 pandas==2.2.2
-pillow==10.4.0
+pillow==12.1.1
 preshed==3.0.9
 protobuf==5.28.0
 pyarrow==17.0.0
