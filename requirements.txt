@@ -25,7 +25,7 @@ gliner==0.2.10
 gliner-spacy==0.0.10
 huggingface-hub==0.24.6
 humanfriendly==10.0
-idna==3.8
+idna==3.15
 iterative-stratification==0.1.7
 Jinja2==3.1.4
 joblib==1.4.2
